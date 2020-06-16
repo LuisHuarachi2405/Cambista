@@ -64,7 +64,7 @@ class HomePageWeb extends StatelessWidget {
              Container(
                color: Colors.white,
                width: _screenSize.width ,
-               height: _screenSize.height * 0.9,
+              
                child: Row(
                   children: [
                     Container(
@@ -74,35 +74,53 @@ class HomePageWeb extends StatelessWidget {
 
                       ),
                     ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          width: 300,
-                          padding: EdgeInsets.only(top: 30),
-                          child: Text('Cambia dolares desde tu casa al mejor tipo de cambio',style: TextStyle(
-                            fontSize: 40, color: Color.fromRGBO(0,50,255,1)
-                          ),), 
+                    Expanded(
+                        child: Container(
+                          width: _screenSize.width * 0.5 ,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              width: 300,
+                              padding: EdgeInsets.only(top: 30),
+                              child: Text('Cambia dolares desde tu casa al mejor tipo de cambio',style: TextStyle(
+                                fontSize: 40, color: Color.fromRGBO(0,50,255,1)
+                              ),), 
+                            ),
+                            SizedBox(height: 20,),
+                            Container(
+                              width: 300,
+                              child: Text('Tu tambien puedes pagar tu tarjeta  de credito con nosotros',style: TextStyle(
+                                fontSize: 20
+                              ),), 
+                            ),
+                          ],
                         ),
-                        SizedBox(height: 20,),
-                        Container(
-                          width: 300,
-                          child: Text('Tu tambien puedes pagar tu tarjeta  de credito con nosotros',style: TextStyle(
-                            fontSize: 20
-                          ),), 
-                        ),
-                      ],
+                      ),
                     ),
-                    SizedBox(width: 60,),
-                    Container(
-                      child:_form(context)
-                          
-                    )
+                   
+                    Expanded(
+                        child: Container(
+                          width: _screenSize.width*0.3,
+                        child:_form(context)
+                            
+                      ),
+                    ),
+                    
 
                   ],
                 ),
              ),
-             
+             Container(
+               color: Colors.white,
+               width: _screenSize.width,
+               child: blocktwo(context)
+               ),
+            blockTree(context),
+            blockFour(context),
+            blockFive(context),
+            
+            
              Container(
                padding: EdgeInsets.all(15),
                width: MediaQuery.of(context).size.width * 0.7,
@@ -153,13 +171,14 @@ class HomePageWeb extends StatelessWidget {
                ),
               
              ),
+            rextieSocios(context),
              Container(
             
                padding: EdgeInsets.symmetric(vertical: 25),
                child:  Column(
                  children: [
                    Center(
-                         child: Text('¿Porque usar Rextie?'),
+                         child: Text('¿Porque usar Rextie?',style: TextStyle(color: Colors.orange,fontSize: 30),textAlign: TextAlign.center,),
                        ),
                        SizedBox(height: 80,),
                       _imageText(context),
@@ -172,8 +191,9 @@ class HomePageWeb extends StatelessWidget {
                    
 
              ),
-             rextieSocios(context),
-             descarga(context)
+             
+             descarga(context),
+             footer()
             
             
           ],
@@ -182,19 +202,216 @@ class HomePageWeb extends StatelessWidget {
     );
   }
 
+  Widget blockFive(BuildContext context){
+    return Container(
+      color: Color.fromRGBO(246,249,255, 1),
+      width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height*0.5,
+      child: Column(
+         mainAxisAlignment: MainAxisAlignment.spaceAround,
+
+        children: [
+          Text('¿Que opinan los medios?',style: TextStyle(color: Color.fromRGBO(0,200,255, 1),fontSize: 25),),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+               Text('Canal N'),
+               Text('Peru21'),
+               Text('Gestion'),
+               Text('Comercio'),
+               Text('Correo'),
+               Text('RPP'),
+               Text('La Republica'),
+            ],
+          )
+        ],
+      ),
+    );
+  }
+
+  Widget blockFour(BuildContext context){
+    return Container(
+              color: Color.fromRGBO(0,0,150,1),
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height*0.7,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  Row(
+                children: [
+                 Expanded(
+                    child: Column(
+                     children: [
+                       Text('Asociados',style: TextStyle(color: Color.fromRGBO(0,200,255, 1),fontSize: 25),),
+                       SizedBox(height: 10,),
+                       Row(
+                         mainAxisAlignment: MainAxisAlignment.spaceAround,
+                         children: [
+                           Icon(Icons.assignment_returned),
+                           Icon(Icons.assistant_photo),
+                         ],
+                       )
+                     ],
+                   ),
+                 ),
+                 Expanded(
+                      child: Column(
+                     
+                     children: [
+                       Text('Aliados',style: TextStyle(color: Color.fromRGBO(0,200,255, 1),fontSize: 25)),
+                       SizedBox(height: 10,),
+                       Row(
+                         mainAxisAlignment: MainAxisAlignment.spaceAround,
+                         children: [
+                           Icon(Icons.beach_access),
+                           Icon(Icons.brightness_7),
+                         ],
+                       )
+                     ],
+                   ),
+                 )
+                ],
+              ),
+              Row(
+                children: [
+                 Expanded(
+                    child: Column(
+                     children: [
+                       Text('Asociados',style: TextStyle(color: Color.fromRGBO(0,200,255, 1),fontSize: 25),),
+                       SizedBox(height: 10,),
+                       Row(
+                         mainAxisAlignment: MainAxisAlignment.spaceAround,
+                         children: [
+                           Icon(Icons.assignment_returned),
+                           Icon(Icons.assistant_photo),
+                         ],
+                       )
+                     ],
+                   ),
+                 ),
+                 Expanded(
+                      child: Column(
+                     
+                     children: [
+                       Text('Aliados',style: TextStyle(color: Color.fromRGBO(0,200,255, 1),fontSize: 25)),
+                       SizedBox(height: 10,),
+                       Row(
+                         mainAxisAlignment: MainAxisAlignment.spaceAround,
+                         children: [
+                           Icon(Icons.beach_access),
+                           Icon(Icons.brightness_7),
+                         ],
+                       )
+                     ],
+                   ),
+                 )
+                ],
+              ),
+                ],
+              ),
+            );
+  }
+
+  Widget blockTree(BuildContext context){
+    return Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height * 0.4,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                
+                children: [
+                 Expanded(
+                    child: Column(
+                     mainAxisAlignment: MainAxisAlignment.center,
+                     
+                     children: [
+                       Text('OPERACIONES INMEDIATAS (15 min.)'),
+                       SizedBox(height: 10,),
+                       Image.asset('bcp.png')
+                     ],
+                   ),
+                 ),
+                 Expanded(
+                      child: Column(
+                     mainAxisAlignment: MainAxisAlignment.center,
+                     crossAxisAlignment: CrossAxisAlignment.start,
+                     children: [
+                       Text('OPERACIONES INTERBANCARIAS'),
+                       SizedBox(height: 10,),
+                       Image.asset('bbva.png')
+                     ],
+                   ),
+                 )
+                ],
+              ),
+            );
+  }
+
+  Widget blocktwo(BuildContext context){
+     return Column(
+                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                        children: [
+                          Container(
+                            //width: MediaQuery.of(context).size.width*0.25,
+                            
+                            child:Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(Icons.grain,
+                                size: 50,),
+
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('Registrados en :'),
+                                    SizedBox(height: 10,),
+                                    Text('La Superintendencia de banca,\n Seguros y AFP',style: TextStyle(color: Color.fromRGBO(0, 50, 250, 1)))
+                                  ],
+                                )
+                              ],
+                            )
+                          ),
+                          Container(
+      
+                            child:Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(Icons.assignment_return,
+                                size: 50,),
+                                
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('Dolares negociables con clientes'),
+                                    SizedBox(height: 10,),
+                                    Text('800 millones',style: TextStyle(color: Color.fromRGBO(0, 50, 250, 1)))
+                                  ],
+                                )
+                              ],
+                            )
+                          )
+                        ],
+                      );
+             
+             
+  }
+
   Widget _imageText(BuildContext context){
      return Container(
                child: Column(
                  crossAxisAlignment: CrossAxisAlignment.center,
-                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                  children: [
                    Row(
                      mainAxisAlignment: MainAxisAlignment.center,
 
                      children: [
-                       Image.asset('transfer.png',
-                       width: MediaQuery.of(context).size.width * 0.4 ,
-                       height: MediaQuery.of(context).size.height * 0.4,
+                       Container(
+                         child: Image.asset('transfer.png',
+                         width: MediaQuery.of(context).size.width * 0.4 ,
+                         height: MediaQuery.of(context).size.height * 0.4,
+                         ),
                        ),
                        Container(
                          width: MediaQuery.of(context).size.width * 0.25 ,
@@ -264,8 +481,6 @@ Widget _textImage(BuildContext context){
     return Column(
         children: <Widget>[
           Container(
-            width: size.width * 0.27,
-            height: size.height * 0.7 ,
             margin: EdgeInsets.symmetric(vertical: 30.0),
             padding: EdgeInsets.only(top: 50.0),
             child: Column(
@@ -353,7 +568,7 @@ Widget _inputTwo() {
       return RaisedButton(
                 child: Container(
                   padding:
-                      EdgeInsets.symmetric(horizontal: 80.0, vertical: 15.0),
+                      EdgeInsets.symmetric(horizontal: 20.0, vertical: 15.0),
                   child: Text('Iniciar la operacion ->'),
                 ),
                 shape: RoundedRectangleBorder(
@@ -401,9 +616,11 @@ Widget _inputTwo() {
                 ],
               ),
             ),
-            Image.asset('group.png',
-            width: MediaQuery.of(context).size.width * 0.55 ,
-            height: MediaQuery.of(context).size.height * 0.55
+            Expanded(
+                          child: Image.asset('group.png',
+              width: MediaQuery.of(context).size.width * 0.55 ,
+              height: MediaQuery.of(context).size.height * 0.55
+              ),
             )
           ],
         ),
@@ -456,6 +673,68 @@ Widget _inputTwo() {
           ],
         ),
 
+      );
+    }
+
+    Widget footer(){
+      final count = ['Rextie','Servicios','Recursos','Soporte','Contacto'];
+       columna(String titulos) { 
+         final rextie = ['© 2019 Rextie. Todos los derechos reservados.','RUC 20601030013'];
+         final servicios = ['Cambio de Moneda','Rextie Scan '];
+         final recursos = ['Términos y Condiciones','Política de Privacidad','Libro de Reclamaciones','Blog','Sala de Prensa'];
+         final soporte = ['Preguntas frecuentes'];
+         final contacto = ['info@rextie.com','T. 01 700 3301','C. 963 896 793'];
+
+            colum(List contenido){
+              return Expanded(
+              flex: 1,
+              child: Container(
+                margin: EdgeInsets.all(25),
+                child: Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(5.0),
+                      child: Text('$titulos',style:TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.black)),
+                    ),
+                    ...contenido.map((e){
+                      return Padding(
+                      padding: const EdgeInsets.all(5.0),
+                      child: Text('$e',style:TextStyle(fontSize: 15,color: Colors.grey),textAlign: TextAlign.start,)
+                    );
+                    })
+                  ],
+                ),
+              ),
+            );
+            }
+
+         switch (titulos) {
+            case "Rextie":
+              return colum(rextie);
+            case "Servicios":
+              return colum(servicios);
+            case "Recursos":
+              return colum(recursos);
+            case "Soporte":
+              return colum(soporte);
+            case "Contacto":
+              return colum(contacto);      
+           default:
+         }
+
+      
+       }
+      return Container(
+        height: 400,
+        margin: EdgeInsets.all(10),
+        color: Colors.white,
+        child: Row(
+          children: [
+            ...count.map((e) {
+               return columna(e);
+            })
+          ],
+        ),
       );
     }
 
